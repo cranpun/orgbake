@@ -1,0 +1,45 @@
+######################
+## default
+######################
+/vendor/*
+/config/app.php
+/tmp/*
+/logs/*
+
+######################
+## Model
+######################
+/src/Model/*
+!/src/Model/Behavior/
+
+######################
+## Controller
+######################
+/src/Controller/*
+
+## 手書き
+!/src/Controller/Component/
+!/src/Controller/AppController.php
+!/src/Controller/ErrorController.php
+!/src/Controller/PagesController.php
+!/src/Controller/TopsController.php
+
+######################
+## Template
+######################
+!/src/Template/
+/src/Template/*
+
+## 手書き
+!/src/Template/Element/
+!/src/Template/Email/
+!/src/Template/Error/
+!/src/Template/Layout/
+!/src/Template/Pages/
+!/src/Template/Plugin/
+!/src/Template/Tops/
+
+######################
+## その他のbake code
+######################
+/tests/*

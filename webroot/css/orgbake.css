@@ -1,0 +1,114 @@
+/* //////////////////////////////////// */
+/* common */
+/* //////////////////////////////////// */
+.text-white
+{
+    color: white;
+}
+.full
+{
+    width: 100%;
+}
+.wauto
+{
+    width: auto!important;
+}
+.hdn
+{
+    display: none;
+}
+table.table.nowrap 
+{
+    white-space: nowrap;
+}
+@media print
+{
+	.hdn_print
+	{
+		display: none!important;
+	}
+	
+}
+/* //////////////////////////////////// */
+/* vertical-table */
+/* //////////////////////////////////// */
+@media (max-width: 768px)
+{
+    .vertical-table th,
+    .vertical-table td
+    {
+        display: block;
+    }
+}
+@media all
+{
+    .vertical-table input,
+    .vertical-table textarea,
+    .vertical-table select
+    {
+        width: 100%;
+    }
+    .vertical-table
+    {
+        width: 100%;
+    }
+    .vertical-table th
+    {
+        background: #dff0d8;
+    }
+    .vertical-table tr:last-child th,
+    .vertical-table tr:last-child td,
+    .table tr:last-child th,
+    .table tr:last-child td
+    {
+        border-bottom: 1px solid #dddddd;
+    }
+}
+
+/* //////////////////////////////////// */
+/* base */
+/* //////////////////////////////////// */
+body#body 
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-top: 5px;
+}
+h1#title_page
+{
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+h3.action_page
+{
+    border-left: 5px solid #468847;
+    background: #dff0d8;
+    color: #468847;
+    padding: 5px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+h3.action_page:first-child
+{
+    margin-top: 0px;
+}
+
+
+/* //////////////////////////////////// */
+/* header */
+/* //////////////////////////////////// */
+.logo_header_img
+{
+    vertical-align: -11px;
+}
+
+h4.logo_header_text
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    display: inline-block;
+    color: white;
+}
+#btn_logout
+{
+    margin-top: 5px;
+}
+
