@@ -227,6 +227,7 @@ Plugin::load('Migrations');
 
 Configure::load('roles', 'default', false);
 Configure::load('usebs', 'default', false);
+Configure::load('themes', 'default', false);
 
 Configure::write('Users.config', ['users']);
 Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);

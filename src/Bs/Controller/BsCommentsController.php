@@ -34,9 +34,11 @@ class BsCommentsController extends AppController
     }
 
     public function beforeRedirect(Event $event, $url, Response $response) {
-      parent::beforeRedirect($event, $url, $response);        // viewの場合はindexにリダイレクト
-      if($url["action"] == "view") {
-          $response->location("/orgbake/Comments/index");
-      }
+        parent::beforeRedirect($event, $url, $response);        // viewの場合はindexにリダイレクト
+        if(array_key_exists("action", $url)) {
+            if($url["action"] == "view") {
+                $response->location("/orgbake/Comments/index");
+            }
+        }
    }
 }

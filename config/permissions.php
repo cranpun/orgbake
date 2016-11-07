@@ -144,6 +144,12 @@ return [
             'action' => ["edit", "view", "delete"],
             'allowed' => false,
         ],
+        [
+            'role' => ["admin"],
+            'controller' => 'Confs',
+            'action' => ["edit", "index"],
+            'allowed' => true,
+        ],
 
         // 基本は全て不許可
         [

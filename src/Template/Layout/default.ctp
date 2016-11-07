@@ -12,7 +12,8 @@
  * @since         0.10.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
+use Cake\Core\Configure;
+use Cake\ORM\TableRegistry;
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,8 +35,14 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js"></script>
 
     <!-- bootstrap -->
+    <?php 
+    $theme = Configure::read("themes");
+    $tab = TableRegistry::get("Confs");
+    $tv = $tab->get(1); // ID1がデザインテーマ
+    $bscssurl = $theme[$tv->value]["url"];
+    ?>
     <!-- <link rel="stylesheet" href="http://bootswatch.com/united/bootstrap.min.css" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="http://bootswatch.com/cerulean/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= $bscssurl ?>" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- moment.js -->
@@ -61,7 +68,7 @@
     </script> 
     <?php
     if($app_nowauth->user() != null) {
-        $logo_url = "/Tops";
+        $logo_url = "/orgbake/Tops";
         $logout_css = "";
     }  else {
         $logo_url = "#";
@@ -74,10 +81,10 @@
         <div class="container-fluid">
             <div class="">
                 <a class="" href="<?= $logo_url ?>">
-                    <span class="text-white">
-                        <h4 class="logo_header_text">
-                        サンプルシステム<br/>コメント投稿
-                        </h4>
+                    <span class="">
+                        <h3 class="text-info">
+                            <strong>サンプルシステム<br/>コメント投稿</strong>
+                        </h3>
                     </span>
                 </a>
                 <div class="pull-right <?= $logout_css ?>">
@@ -99,7 +106,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                         <li><a href="/orgbake/Comments/">コメント</a></li>
+                <?php if($app_nowauth->user()["role"] == "admin") : ?>
                         <li><a href="/orgbake/Users/">ユーザ</a></li>
+                        <li><a href="/orgbake/Confs/">設定</a></li>
+                <?php endif; ?>
             </ul>
             </div><!-- /.navbar-collapse -->
             <?php endif; // isset($now_auth) ?>
