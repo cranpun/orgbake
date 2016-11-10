@@ -106,8 +106,8 @@ use Cake\ORM\TableRegistry;
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                         <li><a href="/orgbake/Comments/">コメント</a></li>
-                <?php if($app_nowauth->user()["role"] == "admin") : ?>
                         <li><a href="/orgbake/Users/">ユーザ</a></li>
+                <?php if($app_nowauth->user()["role"] == "admin") : ?>
                         <li><a href="/orgbake/Confs/">設定</a></li>
                 <?php endif; ?>
             </ul>

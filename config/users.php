@@ -5,7 +5,7 @@ return [
         'require' => false
     ],
     'Users.Registration' => [
-        'active' => true
+        'active' => false
     ],
     'Users.Profile' => [
         //Allow view other users profiles
