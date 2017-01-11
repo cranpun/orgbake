@@ -2,7 +2,7 @@
 return [
     // キャメルケースで記述
     "usebs" => [
-        "Comments",
+        "Temps",
         "Confs",
     ]
 ];

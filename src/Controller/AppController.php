@@ -73,9 +73,7 @@ class AppController extends Controller
         parent::initialize();
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        $this->loadComponent('CakeDC/Users.UsersAuth', [
-            "unauthorizedRedirect" => false,
-        ]);
+        $this->loadComponent('CakeDC/Users.UsersAuth');
         if($this->Auth->user()) {
             // ログインしていたらchangePasswordに制限をかける。
             // デフォルトOKになるため、他の人のにアクセスすると書き換えられてしまうため。
@@ -83,7 +81,7 @@ class AppController extends Controller
             // 何故かisAuthorizedを呼び出しておかないと、providerが取得できない。
             $this->Auth->isAuthorized();
         }
-         $this->Auth->allow();
+        // $this->Auth->allow();
 
         // view変数初期化
         $this->app_nowfields = [];

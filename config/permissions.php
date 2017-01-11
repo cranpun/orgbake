@@ -133,21 +133,15 @@ return [
             'allowed' => true,
         ],
         [
-            'role' => "*",
+            'role' => '*',
             'controller' => 'Pages',
-            'action' => "*",
+            'action' => '*',
             'allowed' => true,
         ],
         [
-            'role' => "*",
-            'controller' => 'Comments',
-            'action' => ["edit", "view", "delete"],
-            'allowed' => false,
-        ],
-        [
             'role' => ["admin"],
-            'controller' => 'Confs',
-            'action' => ["edit", "index"],
+            'controller' => 'Temps',
+            'action' => '*',
             'allowed' => true,
         ],
 
