@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  os:
+    #image: centos:6.8
+    build: ./centos
+    image: orgbakecentos
+    volumes:
+      - ..:/var/www/html
+## for db permanent
+#      - db_data:/var/lib/mysql
+## for output log to host os
+#      - ./centos/apachelog:/var/log/httpd
+    ports:
+      - '80:80'
+    extra_hosts:
+      - "mysql112.phy.lolipop.lan:127.0.0.1"
+
+## for db permanent
+#volumes:
+#    db_data:

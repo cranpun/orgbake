@@ -134,8 +134,8 @@ return [
         ],
         [
             'role' => "*",
-            'controller' => 'Comments',
-            'action' => ["add", "index"],
+            'controller' => 'Pages',
+            'action' => "*",
             'allowed' => true,
         ],
         [
