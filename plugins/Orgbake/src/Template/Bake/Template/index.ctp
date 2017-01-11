@@ -59,13 +59,14 @@ $(function() {
                     ];
                     ?>
                     <?php if(U::canDo($app_nowauth, $menudata + ["action" => "view"])): ?>
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $row["id"]]) ?>
+                        <?= $this->Html->link(__('View'), $menudata + ['action' => 'view', $row["id"]]) ?>
                     <?php endif; ?>
                     <?php if(U::canDo($app_nowauth, $menudata + ["action" => "edit"])): ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $row["id"]]) ?>
+                        <?= $this->Html->link(__('Edit'), $menudata + ['action' => 'edit', $row["id"]]) ?>
                     <?php endif; ?>
                     <?php if(U::canDo($app_nowauth, $menudata + ["action" => "delete"])): ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $row["id"]], ['confirm' => "本当に削除しますか？ ID：{$row['id']}"]) ?>
+                        <?= $this->Form->postLink(__('Delete'), $menudata + ['action' => 'delete', $row["id"]], 
+                                                  ['confirm' => "本当に削除しますか？ ID：{$row['id']}"]) ?>
                     <?php endif; ?>
                 </td>
                 <?php endif; ?>

@@ -15,6 +15,10 @@ class BsTempsController extends AppController
 {
     public function store() {
         $this->autoRender = false;
-        debug($this->request->query);
+	$data = $this->request->data;
+	$tab = TableRegistry::get("Temps");
+	$ent = $tab->newEntity();
+	$tab->patchEntity($ent, $data);
+	echo $tab->save($ent);
     }
 }

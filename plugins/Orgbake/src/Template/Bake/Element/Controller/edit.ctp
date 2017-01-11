@@ -44,7 +44,7 @@ $compact = ["'" . $singularName . "', 'fields'"];
 
                 // 追加の保存処理：falseを返せばロールバック
                 if(method_exists($this, "editSave")) {
-                    $ret = $this->addSave($nowconn, $ret);
+                    $ret = $this->editSave($nowconn, $ret);
                 }
 
                 return $ret;

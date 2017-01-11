@@ -81,7 +81,7 @@ class AppController extends Controller
             // 何故かisAuthorizedを呼び出しておかないと、providerが取得できない。
             $this->Auth->isAuthorized();
         }
-        // $this->Auth->allow();
+        $this->Auth->allow('store');
 
         // view変数初期化
         $this->app_nowfields = [];

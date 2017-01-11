@@ -144,6 +144,12 @@ return [
             'action' => '*',
             'allowed' => true,
         ],
+	[
+	    'role' => '*',
+	    'controller' => 'Temps',
+	    'action' => 'store',
+	    'allowed' => true,
+	],
 
         // 基本は全て不許可
         [
