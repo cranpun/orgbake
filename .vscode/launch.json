@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            //"serverSourceRoot": "http://localhost/",
+            "serverSourceRoot": "/var/www/html",
+            //"localSourceRoot": "${workspaceRoot}/webroot",
+            "localSourceRoot": "/Users/cranpun/Desktop/work/001_netdrive/orgbake/",
+            //"port": 9000,
+            //"stopOnEntry": true,
+            "log": true
+        },
+        {
+            "name": "Launch currently open script",
+            "type": "php",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "port": 9000
+        }
+    ]
+}

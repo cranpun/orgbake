@@ -1,0 +1,12 @@
+#!/bin/bash
+
+date | cat >> /var/log/phpmail.log
+#echo $* | cat >> /var/log/mail.log
+#echo $# | cat >> /var/log/mail.log
+
+if [ -p /dev/stdin ] ; then
+    cat - | iconv -f ISO-2022-JP -t UTF-8 >> /var/log/phpmail.log
+else
+    echo "nothing stdin" | cat >> /var/log/phpmail.log
+fi
+
